@@ -41,9 +41,9 @@ public class PlayerDataEntry : MonoBehaviour
 
     public void CallingEntry()
     {
-        if(playerData.ContainsValue(InputField.text))
+        if(playerData.ContainsValue(InputField.text) && playerData.ContainsKey(0))
         {
-
+            displayText.text = "Name: Varant " + " Level: 100 " + " Score: 1000 ";
             Debug.Log(InputField.text);
         }
         Debug.Log(InputField.text);

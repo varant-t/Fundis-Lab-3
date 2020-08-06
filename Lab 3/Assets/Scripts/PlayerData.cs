@@ -20,12 +20,7 @@ public class PlayerData : MonoBehaviour
         playerData.Add(1, "Charles");
         playerData.Add(2, "Matt");
         playerData.Add(3, "Craig");
-
-        /*
-        playerData.Add("Varant", new PlayerDataEntry { Name = "Varant", Level = Random.Range(1, 100), Score = Random.Range(1, 1000) });
-        playerData.Add("Matt", new PlayerDataEntry { Name = "Matt", Level = Random.Range(1, 100), Score = Random.Range(1, 1000) });
-        playerData.Add("Charles", new PlayerDataEntry { Name = "Charles", Level = Random.Range(1, 100), Score = Random.Range(1, 1000) });
-        playerData.Add("Craig", new PlayerDataEntry { Name = "Craig", Level = Random.Range(1, 100), Score = Random.Range(1, 1000) });
+   
         */
     }
 
