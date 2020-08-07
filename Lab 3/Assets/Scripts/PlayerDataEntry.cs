@@ -6,31 +6,34 @@ using UnityEngine.UI;
 
 public class PlayerDataEntry : MonoBehaviour
 {
-    public string Name;
-    public int Level;
-    public int Score;
-    public Hashtable playerData;
-    public PlayerData pd;
+    public PlayerData playerData;
+    public Hashtable pd;
+   
 
     public TextMeshPro TextPlayerName;
     public TextMeshPro TextPlayerLevel;
     public TextMeshPro TextPlayerScore;
     public TMP_InputField InputField;
-
     public TextMeshProUGUI displayText;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        TextPlayerName = GameObject.FindObjectOfType<TextMeshPro>();
 
+        PlayerData playerdata = gameObject.GetComponent<PlayerData>();
+        TextPlayerName = GameObject.FindObjectOfType<TextMeshPro>();
         InputField = GameObject.FindObjectOfType<TMP_InputField>();
 
-        playerData = new Hashtable();
 
-        playerData.Add(0, "Varant");
-        playerData.Add(1, "Charles");
-        playerData.Add(2, "Matt");
-        playerData.Add(3, "Craig");
+        pd = new Hashtable();
+        pd.Add(0, "Varant");
+        pd.Add(1, "Matt");
+        pd.Add(2, "Charles");
+        pd.Add(3, "Craig");
+
+      
+        CallingEntry();
     }
 
     // Update is called once per frame
@@ -41,42 +44,15 @@ public class PlayerDataEntry : MonoBehaviour
 
     public void CallingEntry()
     {
-        if(playerData.ContainsValue(InputField.text) && playerData.ContainsKey(0))
+        if(pd.ContainsValue(InputField.textComponent) && pd.ContainsKey(0))
         {
-            displayText.text = "Name: Varant " + " Level: 100 " + " Score: 1000 ";
-            Debug.Log(InputField.text);
+            displayText.text = playerData.GetValues();
+            Debug.Log("Calling");
         }
-        Debug.Log(InputField.text);
 
     }    
 
-    void varantStats()
-    {
-        Name = "Varant";
-        Level = 100;
-        Score = 1000;
-    }
 
-    void chalresStats()
-    {
-        Name = "Charles";
-        Level = 80;
-        Score = 800;
-    }
-
-    void mattStats()
-    {
-        Name = "Matt";
-        Level = 60;
-        Score = 600;
-    }
-
-    void craigStats()
-    {
-        Name = "Craig";
-        Level = 40;
-        Score = 400;
-    }
 }
 
 
